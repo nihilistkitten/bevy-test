@@ -22,6 +22,12 @@ impl Movable {
     }
 }
 
+impl Default for Movable {
+    fn default() -> Self {
+        Self::new(0.0, 0.0, 0.0, 0.0)
+    }
+}
+
 impl Plugin for System {
     fn build(&self, app: &mut AppBuilder) {
         app.add_system(movement.system());
